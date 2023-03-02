@@ -6,6 +6,7 @@
 //Letra "M" ao se verificar o status do git significa que o arquivo foi modificado.
 
 //Lembre-se de que não é necessário realizar commit em arquivos do código compilado, os ".class".
+import java.util.ArrayList;
 
 public class TesteEmpregado {
     public static void main(String[] args) {
@@ -23,5 +24,18 @@ public class TesteEmpregado {
         e3.setSalario(1700);
         e3.setBonus(400);
 
+        var empregados = new ArrayList<Empregado>();
+        empregados.add(e1);
+        empregados.add(e2);
+        empregados.add(e3);
+
+        //enhanced for (Java 5+)
+        for(Empregado e : empregados){
+            System.out.println(e.calcularSalario());
+        }
+
+        for(int i=0; i<empregados.size(); i++){
+            System.out.println(empregados.get(i).calcularSalario());
+        }
     }
 }
